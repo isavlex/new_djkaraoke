@@ -3,10 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const fs = require('fs');
 const CopyPlugin = require('copy-webpack-plugin')
-
-const isProd = process.env.NODE_ENV === 'production'
-const isDev = !isProd
+const isDev = process.env.NODE_ENV === 'development'
 const filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
+
 
 const PATHS = {
   src: path.join(__dirname, './src'),
