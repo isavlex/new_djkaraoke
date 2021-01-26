@@ -1,0 +1,24 @@
+mixin icon(name,mod)
+  if (mod)
+    svg(class='svg-sprite-icon icon-' + name + ' ' + mod)
+      use(href="../../icons/inline/\" + name + \".svg")
+  else
+    svg(class='svg-sprite-icon icon-' + name)
+      use(href="../../icons/inline/\" + name + \".svg")
+
+mixin imgSet(options)
+  - var srcSet = ''
+  - var srcSetItem = ''
+  - var count = 1
+  - var comma
+
+  while count <= options.dpiLimit
+    - comma = count < options.dpiLimit ? ', ' : ''
+    - srcSet += options.path + options.name + '-' + count + 'x' + '.webp ' + count + 'x' + ' , ' + options.path + options.name + '-' + count + 'x' + '.jpg ' + count + 'x' + comma
+    - count += 1
+  img(
+    srcset=srcSet,
+    src=options.path + options.name + '-1x.jpg',
+    alt=options.alt,
+    class=options.class
+  )

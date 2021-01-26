@@ -1,0 +1,25 @@
+.photo-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.photo-gallery__frame {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 238px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 5px;
+  @include breakpoint-dfirst(phone) {
+    width: 310px;
+    height: auto;
+    margin: 5px 0;
+  }
+}
+
+.photo-gallery__img {
+  width: 100%;
+}

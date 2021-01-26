@@ -1,0 +1,16 @@
+mixin offer(options)
+  .blocks.blocks--offer
+    each offer, index in options.offers
+      .block.offer
+        img(src="assets/img/offers/" + options.offersImg[index], alt= offer class="offer__img")
+        h3.h3= offer
+        .stretch-out
+          .stretch-out__item
+            ul.offer__list
+              each item in options.offerLists[index]
+                li.offer__item= item
+          .stretch-out__item
+            if index === 0
+              p= options.note
+            p.offer__price= options.prices[index]
+            button.button.offer__button(data-order=options.orders[index] data-type="order") Забронировать

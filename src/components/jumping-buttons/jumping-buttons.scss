@@ -1,0 +1,172 @@
+.jumping-buttons {
+  position: fixed;
+  right: 80px;
+  bottom: 80px;
+  z-index: 100;
+}
+
+.jumping-buttons__input {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+}
+
+.jumping-buttons__label {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background-color: #8c8c8c;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite ease-out;
+  &:hover {
+    animation: none;
+  }
+}
+
+.jumping-buttons__message {
+  width: 35px;
+  height: 32px;
+  stroke-width: 1.5px;
+  background: url(../../icons/message.svg) no-repeat 50% #8c8c8c;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.jumping-buttons__close {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: url(../../icons/close.svg) no-repeat 50%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.jumping-buttons__tooltip {
+  position: absolute;
+  right: 70px;
+  white-space: nowrap;
+  background: #fff;
+  padding: 6px 9px;
+  font-size: 13px;
+  border-radius: 3px;
+  transform: translateX(0%) translateY(-50%);
+  top: 50%;
+  background: #292929;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.1s linear;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-width: 10px;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    border-left-color: #292929;
+  }
+}
+
+.jumping-buttons__icon {
+  position: absolute;
+  left: 50%;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    .jumping-buttons__tooltip {
+      opacity: 0.9;
+    }
+  }
+}
+
+.jumping-buttons__icon--telegram {
+  background: url(../../icons/telegram.svg) no-repeat 50% rgb(0, 135, 208);
+}
+.jumping-buttons__icon--whatsapp {
+  background: url(../../icons/whatsapp.svg) no-repeat 50% rgb(0, 135, 208);
+}
+.jumping-buttons__icon--vk {
+  background: url(../../icons/vk-blue.svg) no-repeat 50% rgb(0, 135, 208);
+}
+.jumping-buttons__icon--mail {
+  background: url(../../icons/mail.svg) no-repeat 50% rgb(0, 135, 208);
+}
+.jumping-buttons__icon--phone {
+  background: url(../../icons/phone.svg) no-repeat 50% rgb(0, 135, 208);
+}
+.jumping-buttons__icon--phone {
+  background: url(../../icons/instagram.svg) no-repeat 50% rgb(0, 135, 208);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  25% {
+    transform: scale(1.1, 1.1);
+  }
+
+  50% {
+    transform: scale(1, 1);
+  }
+}
+
+.jumping-buttons__input:checked {
+  + .jumping-buttons__label {
+    animation: none;
+    background-color: #ffffff;
+    .jumping-buttons__message {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .jumping-buttons__close {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  ~ .jumping-buttons__icon {
+    visibility: visible;
+    opacity: 1;
+  }
+  ~ .jumping-buttons__icon--telegram {
+    background: url(../../icons/telegram.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -135%);
+  }
+  ~ .jumping-buttons__icon--whatsapp {
+    background: url(../../icons/whatsapp.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -255%);
+  }
+  ~ .jumping-buttons__icon--vk {
+    background: url(../../icons/vk-blue.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -375%);
+  }
+  ~ .jumping-buttons__icon--mail {
+    background: url(../../icons/mail.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -495%);
+  }
+  ~ .jumping-buttons__icon--phone {
+    background: url(../../icons/phone.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -615%);
+  }
+  ~ .jumping-buttons__icon--instagram {
+    background: url(../../icons/instagram.svg) no-repeat 50% rgb(0, 135, 208);
+    transform: translate(0, -735%);
+  }
+}

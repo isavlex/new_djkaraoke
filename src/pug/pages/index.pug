@@ -1,0 +1,148 @@
+extends ../layouts/main
+block varibles
+  include ../data/karaoke-offers
+  include ../data/dj-offers
+  - var metaDescription = 'Аренда караоке Ведущий и диджей на праздник, тяжелый дым на свадьбу'
+  - var metaKeywords = 'аренда караоке в москве, аренда караоке оборудования, выездное караоке, диджей на свадьбу, ведущий и диджей на свадьбу недорого, ведущий и диджей недорого, ведущий свадьба, тамада на свадьбу, ведущий на корпоратив, ведущий недорого, диджей на юбилей в москве, диджей недорого,поющий ведущий, певец на свадьбу, певец на юбилей,'
+  - var pageTitle = 'DJKARAOKE'
+  -
+    var itemsSmoke = [
+      {videoLink: "https://www.youtube.com/watch?v=MBGjCBg8EuA&feature=youtu.be", imgPlug: "plug-smoke.jpg", imgAlt: "Тяжелый дым"},
+    ]
+  - var smokeVideo = { idUl: 'smoke-video', classUl: 'columns', items: itemsSmoke, posterMod: "video-gallery__poster--circle"}
+  -
+    var itemsLeading = [
+      {videoLink: "https://www.youtube.com/watch?v=6HeeDmfQWgc&feature=emb_logo", imgPlug: "plug-leading.jpg", imgAlt: "Ведущий Евгений Александров"},
+    ]
+  - var leadingVideo = { idUl: 'leading-video', classUl: 'columns', items: itemsLeading, posterMod: "video-gallery__poster--circle"}
+  -
+    var itemsGallery = [
+      {videoLink: "https://www.youtube.com/watch?v=VtqUC3rvhks&feature=emb_logo", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
+      {videoLink: "https://www.youtube.com/watch?v=bAYPViYuTGs&feature=emb_logo", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
+    ]
+  -var galleryVideo = { idUl: 'gallery-video', classUl: 'columns', items: itemsGallery, posterMod: "" }
+
+block content
+  <!-- Yandex.Metrika counter -->
+  script.
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+    ym(44743726, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+    });
+  noscript <div><img src="https://mc.yandex.ru/watch/44743726" style="position:absolute; left:-9999px;" alt="" /></div>
+  <!-- /Yandex.Metrika counter -->
+  +jumping-buttons
+  .fluid.fluid--black.fluid--fixed
+    .wrap.header
+      .header__logo
+        a.header__link(href="./") DJKARAOKE
+      .header__menu
+        +menu({"items": ["Караоке", "Диджей", "Ведущий", "Тяжелый дым", "Отзывы", "Портфолио", "Контакты"], "links": ["karaoke", "dj", "leading", "smoke","reviews", "portfolio", "contacts"]})
+  .fluid.fluid--p.fluid--gradient
+    a#about
+    .wrap.center
+      h1.h1 Аренда караоке<br />Ведущий и диджей на праздник<br />Тяжелый дым на свадьбу
+      p.p-big.white Все для Вашего мероприятия без наценок и посредников
+
+  .fluid.fluid--gray
+    a#karaoke
+    .wrap
+      h2.h2.center Комплекты караоке
+      p.p-big.center Всегда качественный звук и обновление базы песен
+      +offer(karaokeOffers)
+  .fluid.fluid--pale-pink
+    a#dj
+    .wrap
+      h2.h2.center DJ/MC
+      p.p-big.center Создаст необходимую атмосферу и драйв на танцполе
+      +offer(djOffers)
+  .fluid.fluid--white
+    a#leading
+    .wrap
+      h2.h2.center Ведущий
+      p.p-big.center Человек, который сделает мероприятие комфортным и интересным
+      .leading
+        .leading__wrap
+          +video-gallery(leadingVideo)
+          .leading__about
+            h3.h3 Евгений Александров
+            p.p-mini Ведущий, Dj, музыкант
+            p Он точно знает, как сделать нужную атмосферу на мероприятии. Драйв, энергетика, стиль и уверенность, а так же свободная импровизация, вот что отличает его от других.
+          a(href="https://aesproduction.ru", target="blank")
+            button.button Подробнее
+  .fluid.fluid--pale-blue
+    a#smoke
+    .wrap
+      h2.h2.center Тяжелый дым на свадьбу
+      p.p-big.center Красивое оформление первого танца
+      .leading
+        .leading__wrap
+          +video-gallery(smokeVideo)
+          .leading__about
+            h3.h3 Тяжелый дым
+            p.p-mini Для запуска тяжелого дыма используется 20 кг сухого льда, что гарантирует высокое качество услуги на площади до 300 метров.
+            p.bold Запуск 15000₽
+  .fluid.fluid--black
+    .wrap.gallery
+      a#reviews
+      h2.center.big Отзывы наших клиентов
+      +reviews
+  .fluid
+    .wrap.gallery
+      h2.center.big Выбирая нас, Вы получаете
+      .skills
+        .skills__item
+          .skills__img
+            img.skills__pic(
+              src="assets/img/icons/individual.svg",
+              alt="Индивидуальный подход"
+            )
+          .skills__text
+            h2 Индивидуальный подход
+            p Наша компания работает по принципу индивидуального подхода к каждому клиенту. Мы уважаем ваши пожелания и предпочтения.
+        .skills__item
+          .skills__img
+            img.skills__pic(
+              src="assets/img/icons/star.svg",
+              alt="Высокое качество"
+            )
+          .skills__text
+            h2 Высокое качество
+            p Мы заинтересованы в дальнейшем сотрудничестве и оказываем максимально высокий уровень услуг.
+        .skills__item
+          .skills__img
+            img.skills__pic(
+              src="assets/img/icons/wink.svg",
+              alt="Искренние эмоции"
+            )
+          .skills__text
+            h2 Искренние эмоции
+            p Как артист я понимаю, что единственный способ пополнить свою энергию - это обратная связь от вас, поэтому выкладываюсь на все 100%.
+        .skills__item
+          .skills__img
+            img.skills__pic(
+              src="assets/img/icons/support.svg",
+              alt="Поддержка на любом этапе мероприятия"
+            )
+          .skills__text
+            h2 Поддержка на любом этапе мероприятия
+            p Вы всегда можете рассчитывать на нашу помощь. За время работы мы собрали профессиональную команду, которая решит любую задачу.
+    +social({"mode": "fluid"})
+  .fluid
+    .wrap.gallery
+      a#portfolio
+      +photo-gallery("img", 12)
+      +video-gallery(galleryVideo)
+  +footer
+
+block scripts

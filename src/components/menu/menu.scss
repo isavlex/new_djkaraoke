@@ -1,0 +1,92 @@
+.hamburger {
+  position: relative;
+  z-index: 100;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  top: 35px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.hamburger__layers {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  z-index: 10;
+  top: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  &::before {
+    @extend .hamburger__layers;
+    content: "";
+    top: 10px;
+  }
+
+  &::after {
+    @extend .hamburger__layers;
+    content: "";
+    top: 20px;
+  }
+}
+
+.hamburger__layers--disclosed {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+  background-color: black;
+  &::before {
+    opacity: 0;
+  }
+
+  &::after {
+    background-color: black;
+    transform: translate3d(0, -20px, 0) rotate(-90deg);
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(235, 235, 235);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.menu--disclosed {
+  display: flex;
+}
+
+.menu__button {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 20px;
+  height: 20px;
+}
+
+.menu__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__link {
+  color: black;
+  font-size: 2.5rem;
+  &:hover {
+    color: gray;
+  }
+  &:active {
+    color: black;
+  }
+  @include breakpoint-dfirst(phone) {
+    font-size: 2rem;
+  }
+}

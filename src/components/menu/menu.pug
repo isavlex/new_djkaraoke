@@ -1,0 +1,13 @@
+mixin menu(options)
+  .hamburger
+    .hamburger__layers
+  .menu
+    ul.menu__list
+      each item, iItem in options.items
+        - let anchor = ''
+        each link, iLink in options.links
+          if iLink === iItem
+            - anchor = link
+        li.menu__item
+          a.menu__link(href='#' + anchor)= item
+    +social({"mode": ""})

@@ -1,0 +1,159 @@
+ 
+//grid
+//example--------------------------------------------------------
+//In commom scss
+// @include make-wrap();
+// @include make-row();
+
+// @include get-adaptive($grid-breakpoints, $wrap-max-widths);
+//----------------------------------------------------------------
+
+$columns: 12; //number of columns
+$grid-gap-width: 30px; //column indent
+
+
+//breakpoints varibles
+
+$desktop: 1200px;
+$lg-tablet: 992px;
+$tablet: 768px;
+$phone: 576px;
+
+//width varibles
+$w-100: 100%;
+$w-desktop: 1440px;
+$w-lg-tablet: 992px;
+$w-tablet: 768px;
+$w-phone: 576px;
+
+$grid-breakpoints: (
+    sm: $phone,
+    md: $tablet,
+    lg: $lg-tablet,
+    xl: $desktop,
+);
+
+$wrap-max-widths: (
+    sm: $w-phone,
+    md: $w-tablet,
+    lg: $w-lg-tablet,
+    xl: $w-desktop,
+);
+
+//generate wrap - containier for row
+@mixin make-wrap() {
+    // .wrap have max-width: $wrap-max-widths: xl
+    .wrap {
+        width: 100%;
+        padding: 0 ($grid-gap-width / 2);
+        margin: 0 auto;
+    }
+    //.wrap-fluid stretched to full width and does not fit into media queries
+    .wrap-fluid {
+        width: 100%;
+        padding: 0 ($grid-gap-width / 2);
+        margin: 0 auto;
+    }
+
+    @each $bp-n, $bp-v in $grid-breakpoints {
+        @media only screen and (min-width: #{$bp-v}) {
+            @each $cmw-n, $cmw-v in $wrap-max-widths {
+                .wrap {
+                    @if $bp-n == $cmw-n {
+                        max-width: $cmw-v;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 ($grid-gap-width / -2);
+}
+
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.v-columns {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+%cols {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding: 0 ($grid-gap-width / 2);
+}
+//generate adaptive column and wrap
+
+@mixin get-adaptive($grid-breakpoints, $wrap-max-widths) {
+    .col {
+        @extend %cols;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    //column and order without media queries
+
+    @for $i from 1 through $columns {
+        .col-#{$i} {
+            @extend %cols;
+            flex: 0 0 percentage($i / $columns);
+            max-width: percentage($i / $columns);
+        }
+
+        .order-#{$i} {
+            order: $i;
+        }
+    }
+
+    @each $bp-n, $bp-v in $grid-breakpoints {
+        @for $i from 1 through $columns {
+            .col-#{$bp-n}-#{$i} {
+                @extend %cols;
+            }
+
+        }
+        //column and wrap with media queries
+        @media only screen and (max-width: #{$bp-v}) {
+            @for $i from 1 through $columns {
+                .col-#{$bp-n}-#{$i} {
+                    flex: 0 0 percentage($i / $columns);
+                    max-width: percentage($i / $columns);
+                }
+
+                .order-#{$bp-n}-#{$i} {
+                    order: $i;
+                }
+            }
+        }
+
+        @media only screen and (max-width: #{$bp-v}) {
+            .#{$bp-n}-v-center {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .#{$bp-n}-h-right {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+    }
+}

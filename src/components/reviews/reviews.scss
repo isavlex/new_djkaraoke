@@ -1,0 +1,109 @@
+//reviews
+
+.reviews {
+  position: relative;
+  padding-top: 30px;
+}
+
+.reviews__review {
+  text-align: center;
+}
+
+.reviews__text {
+  display: inline-block;
+  max-width: 60%;
+  @include breakpoint-dfirst(tablet) {
+    max-width: 100%;
+  }
+}
+
+.reviews__person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__wrap {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.reviews__img {
+  width: auto;
+  height: inherit;
+}
+
+.reviews__controls {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 20px);
+}
+
+.reviews__left {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border-radius: 50%;
+  z-index: 90;
+  left: 40px;
+  background: url(../../icons/arrow.svg) #eee 50% no-repeat;
+  transform: translate(-55%, -50%) rotate(180deg);
+  @include breakpoint-dfirst(phone) {
+    width: 30px;
+    height: 30px;
+  }
+  @include breakpoint-dfirst(tablet) {
+    left: 30px;
+  }
+  @include breakpoint-dfirst(phone) {
+    left: 19px;
+  }
+}
+
+.reviews__right {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border-radius: 50%;
+  z-index: 90;
+  right: 0;
+  background: url(../../icons/arrow.svg) #eee 50% no-repeat;
+  transform: translate(-55%, -50%);
+  @include breakpoint-dfirst(phone) {
+    width: 30px;
+    height: 30px;
+  }
+  @include breakpoint-dfirst(tablet) {
+    right: -15px;
+  }
+  @include breakpoint-dfirst(phone) {
+    right: -16px;
+  }
+}
+
+.reviews__nav {
+  @extend .slider__nav;
+  margin-top: 30px;
+}
+
+.reviews__dot {
+  @extend .slider__dot;
+  background-color: white;
+  &:hover {
+    background-color: #c7c7c7;
+  }
+}
+
+.reviews__nav .tns-nav-active {
+  background-color: #222;
+}

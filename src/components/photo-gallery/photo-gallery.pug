@@ -1,0 +1,8 @@
+mixin photo-gallery(imgName, quantity)
+  .photo-gallery#photo-gallery
+    -var n = 0
+    while n < quantity
+      -n++
+      a(class="photo-gallery__link"  href="assets/img/gallery/big/" + imgName + n + ".jpg")
+        .photo-gallery__frame
+          img(class="photo-gallery__img" src="assets/img/gallery/min/" + imgName + n + "-min.jpg" alt="DJ KARAOKE")

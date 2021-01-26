@@ -1,0 +1,13 @@
+mixin footer()
+  footer.fluid.fluid--white
+    .wrap
+      a#contacts
+      h2.h2.center Позвоните нам, чтобы забронировать дату
+      .contacts
+        a.link(href="tel:+79164942042") +7 (916) 494-20-42
+        a.link(
+          href="mailto:e.alexandrov68@gmail.com?subject=Мероприятие"
+        ) e.alexandrov68@gmail.com
+        p.center Адрес: ул. Нижняя Красносельская, д. 45/17
+        .social-wrap
+          +social({"mode": "footer"})
