@@ -1,0 +1,9 @@
+mixin skills(options)
+  .skills
+    each skill, index in options.skills
+      .skills__item
+        .skills__img
+          img.skills__pic(src='assets/img/icons/' + options.skillsImgs[index], alt= skill)
+        .skills__text
+          h2= skill
+          p= options.skillsTexts[index]

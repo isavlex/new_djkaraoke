@@ -2,6 +2,8 @@ extends ../layouts/main
 block varibles
   include ../data/karaoke-offers
   include ../data/dj-offers
+  include ../data/reviews-data
+  include ../data/skills-data
   - var metaDescription = 'Аренда караоке Ведущий и диджей на праздник, тяжелый дым на свадьбу'
   - var metaKeywords = 'аренда караоке в москве, аренда караоке оборудования, выездное караоке, диджей на свадьбу, ведущий и диджей на свадьбу недорого, ведущий и диджей недорого, ведущий свадьба, тамада на свадьбу, ведущий на корпоратив, ведущий недорого, диджей на юбилей в москве, диджей недорого,поющий ведущий, певец на свадьбу, певец на юбилей,'
   - var pageTitle = 'DJKARAOKE'
@@ -96,47 +98,11 @@ block content
     .wrap.gallery
       a#reviews
       h2.center.big Отзывы наших клиентов
-      +reviews
+      +reviews(reviews)
   .fluid
     .wrap.gallery
       h2.center.big Выбирая нас, Вы получаете
-      .skills
-        .skills__item
-          .skills__img
-            img.skills__pic(
-              src="assets/img/icons/individual.svg",
-              alt="Индивидуальный подход"
-            )
-          .skills__text
-            h2 Индивидуальный подход
-            p Наша компания работает по принципу индивидуального подхода к каждому клиенту. Мы уважаем ваши пожелания и предпочтения.
-        .skills__item
-          .skills__img
-            img.skills__pic(
-              src="assets/img/icons/star.svg",
-              alt="Высокое качество"
-            )
-          .skills__text
-            h2 Высокое качество
-            p Мы заинтересованы в дальнейшем сотрудничестве и оказываем максимально высокий уровень услуг.
-        .skills__item
-          .skills__img
-            img.skills__pic(
-              src="assets/img/icons/wink.svg",
-              alt="Искренние эмоции"
-            )
-          .skills__text
-            h2 Искренние эмоции
-            p Как артист я понимаю, что единственный способ пополнить свою энергию - это обратная связь от вас, поэтому выкладываюсь на все 100%.
-        .skills__item
-          .skills__img
-            img.skills__pic(
-              src="assets/img/icons/support.svg",
-              alt="Поддержка на любом этапе мероприятия"
-            )
-          .skills__text
-            h2 Поддержка на любом этапе мероприятия
-            p Вы всегда можете рассчитывать на нашу помощь. За время работы мы собрали профессиональную команду, которая решит любую задачу.
+      +skills(skillsData)
     +social({"mode": "fluid"})
   .fluid
     .wrap.gallery

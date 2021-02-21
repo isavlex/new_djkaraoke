@@ -1,0 +1,35 @@
+//skills
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.skills__item {
+  display: flex;
+  max-width: 67%;
+  @include breakpoint-dfirst(tablet) {
+    max-width: 95%;
+  }
+}
+
+.skills__img {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  @include breakpoint-dfirst(phone) {
+    margin-right: 12px;
+  }
+}
+
+.skills__pic {
+  width: 65px;
+  height: 65px;
+  @include breakpoint-dfirst(tablet) {
+    width: 50px;
+    height: 50px;
+  }
+}
