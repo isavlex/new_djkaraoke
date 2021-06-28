@@ -12,6 +12,7 @@ const filename = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`)
 
 
 const PATHS = {
+  root: path.join(__dirname, './'),
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
   assets: 'assets/',
@@ -95,6 +96,8 @@ module.exports = {
       patterns: [
         { from: `${PATHS.src}/static/img`, to: `${PATHS.assets}img` },
         { from: `${PATHS.src}/icons/`, to: `${PATHS.assets}img/icons` },
+        { from: `${PATHS.src}/static/seo/`, to: `` },
+        { from: `${PATHS.root}/mail.php`, to: `` },
       ],
     }),
     new MiniCssExtractPlugin({
