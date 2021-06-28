@@ -10,6 +10,7 @@ const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 const filename = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`)
 
+
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
