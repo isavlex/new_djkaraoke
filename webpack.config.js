@@ -98,6 +98,7 @@ module.exports = {
         { from: `${PATHS.src}/icons/`, to: `${PATHS.assets}img/icons` },
         { from: `${PATHS.src}/static/seo/`, to: `` },
         { from: `${PATHS.root}/mail.php`, to: `` },
+        { from: `${PATHS.root}/yandex_be0ec29f47d80ffd.html`, to: `` },
       ],
     }),
     new MiniCssExtractPlugin({
