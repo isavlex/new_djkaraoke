@@ -1,29 +1,28 @@
 //main elements
 
-h1 {
-  font-family: $monsterrat;
-  font-size: 2rem;
-  line-height: 1.87rem;
-  margin: 10px 0;
-  padding: 10px 0;
-}
+// h1 {
+//   font-family: $monsterrat;
+//   font-size: 2rem;
+//   line-height: 1.87rem;
+//   margin: 10px 0;
+//   padding: 10px 0;
+// }
 
-h2 {
-  font-family: $monsterrat;
-  font-size: 1.74rem;
-  line-height: 1.5rem;
-  // margin: 8px 0;
-  padding: 10px 0;
-}
+// h2 {
+//   font-family: $monsterrat;
+//   font-size: 1.74rem;
+//   line-height: 1.5rem;
+//   // margin: 8px 0;
+//   padding: 10px 0;
+// }
 
-h3 {
-  font-family: $monsterrat;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  margin: 6px 0;
-  line-height: 0.93rem;
-  padding: 10px 0;
-}
+// h3 {
+//   font-family: $monsterrat;
+//   font-size: 0.85rem;
+//   margin: 6px 0;
+//   line-height: 0.93rem;
+//   padding: 10px 0;
+// }
 
 p {
   padding: 10px 0;
@@ -50,6 +49,23 @@ a {
   }
 }
 
+.h2 {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.74rem;
+  line-height: 1.5rem;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.h3 {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.35rem;
+  margin: 6px 0;
+  line-height: 0.93rem;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
 .p-big {
   font-size: 1.5rem;
 }
@@ -74,8 +90,19 @@ strong {
   font-weight: 400;
 }
 
+.list {
+  list-style-type: none;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  padding: 15px 15px;
+  margin-top: 30px;
+}
+
 .list__item {
-    margin-left: 30px;
+  padding: .5rem 1rem;
+  border-radius: 0.25rem;
+  margin: 15px 0;
+  border: 1px solid rgba(0,0,0,.125);
 }
 
 .text-link {
@@ -91,7 +118,7 @@ summary {
   display: block;
   cursor: pointer;
   color: #474545;
-  margin-left: 30px;
+  margin-left: 15px;
   &:hover {
     color: #0e0d0d;
   }
