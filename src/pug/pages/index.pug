@@ -25,7 +25,11 @@ block varibles
   - var galleryVideo = { idUl: "gallery-video", classUl: "columns", items: itemsGallery, posterMod: "" }
 
 block content
-  
+  // metrica-start
+  script
+    include ../../static/js/metrica.js
+  <noscript><div><img src="https://mc.yandex.ru/watch/44743726" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  // metrica-end
   +jumping-buttons
   .fluid.fluid--black.fluid--fixed
     .wrap.header
