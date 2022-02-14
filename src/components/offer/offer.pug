@@ -2,7 +2,11 @@ mixin offer(options)
   .blocks.blocks--offer
     each offer, index in options.offers
       .block.offer
-        img(src="assets/img/offers/" + options.offersImg[index], alt= offer class="offer__img")
+        if index === 2
+          div.offer__img--video
+            +video-gallery(options.galleryVideo)
+        else
+          img(src="assets/img/offers/" + options.offersImg[index], alt= offer class="offer__img")
         h3.h3= offer
         .stretch-out
           .stretch-out__item

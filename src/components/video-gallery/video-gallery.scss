@@ -11,7 +11,7 @@
 }
 
 .video-gallery__item {
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 .video-gallery__poster {
@@ -27,6 +27,10 @@
   &:hover {
     border: none;
   }
+}
+
+.offer__img--video .video-gallery__poster {
+  max-height: 270px;
 }
 
 .video-gallery__poster--circle {

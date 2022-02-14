@@ -17,12 +17,12 @@ block varibles
       {videoLink: "https://www.youtube.com/watch?v=6HeeDmfQWgc&feature=emb_logo", imgPlug: "plug-leading.jpg", imgAlt: "Ведущий Евгений Александров"},
     ]
   - var leadingVideo = { idUl: "leading-video", classUl: "columns", items: itemsLeading, posterMod: "video-gallery__poster--circle" }
-  -
-    var itemsGallery = [
-      {videoLink: "https://youtu.be/7nXNidDKQo0", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
-      {videoLink: "https://www.youtube.com/watch?v=bAYPViYuTGs&feature=emb_logo", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
-    ]
-  - var galleryVideo = { idUl: "gallery-video", classUl: "columns", items: itemsGallery, posterMod: "" }
+  //- -
+  //-   var itemsGallery = [
+  //-     {videoLink: "https://youtu.be/7nXNidDKQo0", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
+  //-     //- {videoLink: "https://www.youtube.com/watch?v=bAYPViYuTGs&feature=emb_logo", imgPlug: "plug-gallery.jpg", imgAlt: "DJ KARAOKE"},
+  //-   ]
+  
 
 block content
   // metrica-start
@@ -70,6 +70,9 @@ block content
     .wrap
       h2.h2.center Заказать диджея на праздник
       p.p-big.center Создаст необходимую атмосферу и драйв на танцполе
+      div.center
+        <iframe src="//promodj.com/embed/7283855/big" width="100%" height="70" style="min-width: 200px; max-width: 900px" frameborder="0" allowfullscreen></iframe>
+        <iframe src="//promodj.com/embed/7213023/big" width="100%" height="70" style="min-width: 200px; max-width: 900px" frameborder="0" allowfullscreen></iframe>
       +offer(djOffers)
   .fluid.fluid--white
     a#leading
@@ -109,7 +112,6 @@ block content
   .fluid
     .wrap.gallery
       a#portfolio
-      +video-gallery(galleryVideo)
       +photo-gallery("img", 12)
   +footer
 

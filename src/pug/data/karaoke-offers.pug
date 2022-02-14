@@ -1,4 +1,9 @@
 block varibles
+  -
+    var itemGallery = [
+        {videoLink: "https://youtu.be/7nXNidDKQo0", imgPlug: "plug-gallery-2.jpg", imgAlt: "DJ KARAOKE"}
+      ]
+  -var karaokeGalleryVideos = { idUl: "karaoke-video", classUl: "columns", items: itemGallery, posterMod: "" }
   - var karaokeOffersItems = ["Karaoke Minimal", "Karaoke Lite", "Djkaraoke Pro"]
   - var offersImgKaraoke = ["karaoke-min.jpg", "karaoke-lite.jpg", "karaoke-hit.jpg"]
   -
@@ -47,4 +52,4 @@ block varibles
       "lite-karaoke",
       "pro-karaoke",
     ]
-  - var karaokeOffers = { offers: karaokeOffersItems, offersImg: offersImgKaraoke, offerLists: karaokeOfferLists, prices: karaokePrices, note: noteKaraoke, orders: ordersKaraoke }
+  - var karaokeOffers = { offers: karaokeOffersItems, offersImg: offersImgKaraoke, offerLists: karaokeOfferLists, prices: karaokePrices, note: noteKaraoke, orders: ordersKaraoke, galleryVideo: karaokeGalleryVideos }

@@ -14,7 +14,10 @@ lightGallery(document.getElementById('smoke-video'), {
 lightGallery(document.getElementById('photo-gallery'), {
   thumbnail: true,
 })
-lightGallery(document.getElementById('gallery-video'), {
+lightGallery(document.getElementById('dj-video'), {
+  thumbnail: true,
+})
+lightGallery(document.getElementById('karaoke-video'), {
   thumbnail: true,
 })
 
